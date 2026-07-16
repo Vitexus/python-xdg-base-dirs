@@ -4,3 +4,12 @@
 /coverage.xml
 /dist/
 __pycache__/
+
+# Debian build artifacts
+.pybuild/
+debian/.debhelper/
+debian/*.debhelper
+debian/*.substvars
+debian/files
+debian/debhelper-build-stamp
+debian/python3-xdg-base-dirs/

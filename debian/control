@@ -1,0 +1,26 @@
+Source: python-xdg-base-dirs
+Section: python
+Priority: optional
+Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-python,
+ pybuild-plugin-pyproject,
+ python3-all,
+ python3-hatchling,
+Standards-Version: 4.7.0
+Homepage: https://github.com/srstevenson/xdg-base-dirs
+Vcs-Git: https://github.com/Vitexus/python-xdg-base-dirs.git
+Vcs-Browser: https://github.com/Vitexus/python-xdg-base-dirs
+Rules-Requires-Root: no
+
+Package: python3-xdg-base-dirs
+Architecture: all
+Depends:
+ ${misc:Depends},
+ ${python3:Depends},
+Description: Variables defined by the XDG Base Directory Specification
+ xdg-base-dirs implements the XDG Base Directory Specification,
+ providing functions to determine the correct locations for user
+ config, data, state, and cache files, honouring the relevant
+ XDG_* environment variables and their defaults.

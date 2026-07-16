@@ -1,0 +1,5 @@
+python-xdg-base-dirs (6.0.2-1) UNRELEASED; urgency=low
+
+  * Initial Debian packaging
+
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Thu, 16 Jul 2026 07:57:33 +0200

@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=xdg_base_dirs
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+override_dh_auto_configure:
+	# Upstream builds with uv_build, which isn't packaged in Debian;
+	# swap in hatchling for the Debian build only.
+	sed -i 's/requires = \["uv_build.*"\]/requires = ["hatchling"]/' pyproject.toml
+	sed -i 's/build-backend = "uv_build"/build-backend = "hatchling.build"/' pyproject.toml
+	dh_auto_configure
+
+override_dh_auto_test:
+	# Skip tests - test dependencies not packaged
+
+override_dh_auto_clean:
+	dh_auto_clean
+	git checkout pyproject.toml 2>/dev/null || true
